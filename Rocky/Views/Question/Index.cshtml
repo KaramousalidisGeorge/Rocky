@@ -1,0 +1,41 @@
+﻿
+    @model Rocky.Models.Root
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+    <p>JSON data:</p>
+ 
+    @{
+        int counter = 0;
+        foreach (var item in Model.eventName)
+        {
+            counter = counter + 1;
+            <p>Question No:@counter</p>
+            @Html.DisplayFor(modelItem => item)
+            <br />
+
+        }
+    }
+  
+<p>
+    <div class="col-6">
+        <a asp-controller="Question" asp-action="Create" class="btn btn-primary">
+            POST JSON DATA
+        </a>
+    </div>
+
+    <!-- <div class="col-6">
+         <a asp-controller="Question" asp-action="Create" class="btn btn-primary">
+             POST JSON DATA
+         </a>
+     </div>
+        -->
+    <!--@using (Html.BeginForm())
+    // {
+        // @Html.TextBoxFor(s => s.name)
+       //  <input type="submit" />
+     //}
+         -->
+
+

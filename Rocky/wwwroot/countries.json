@@ -1,0 +1,16 @@
+{
+	"countries":[
+		{
+		 "country":"Greece",
+		 "states":["Athens","Patra","Kilkis"]
+		},
+		{
+			"country":"Italy",
+			"states":["Rome","Milan","Naples"]
+		}
+	
+	
+	]
+
+
+}

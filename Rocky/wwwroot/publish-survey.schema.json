@@ -1,0 +1,66 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"title": "Publish Survey",
+	"description": "The message sent when a survey is published",
+	"type": "object",
+	"properties": {
+		"eventName": {
+			"description": "The type of the message",
+			"type": "string",
+			"enum": [
+				"PublishSurvey"
+			]
+		},
+		"surveyId": {
+			"description": "The ID of the survey (GUID)",
+			"type": "string"
+		},
+		"surveyVersion": {
+			"description": "The version of the questionnaire. This version should change on each publish",
+			"type": "integer"
+		},
+		"name": {
+			"description": "The name of the survey - example: Customer Satisfaction 2020",
+			"type": "string"
+		},
+		"publishType": {
+			"description": "The type of publishing. Possible values are Live (when a survey is published) and Test (when a survey is previewed)",
+			"type": "string",
+			"enum": [
+				"Live",
+				"Test"
+			]
+		},
+		"questions": {
+			"description": "The questions of the survey",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"description": "The individual questions of the survey",
+				"properties": {
+					"questionId": {
+						"description": "The ID of the question in internal systems, example: Q1 (it's not the database id)",
+						"type": "string"
+					},
+					"text": {
+						"description": "The question text. Example: How old are you?",
+						"type": "string"
+					}
+				},
+				"required": [
+					"questionId",
+					"text"
+				]
+			}
+		}
+
+	},
+	"required": [
+		"eventName",
+		"surveyId",
+		"surveyVersion",
+		"name",
+		"publishType",
+		"questions"
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"$schema": "./publish-survey.schema.json",
+	"eventName": "PublishSurvey",
+	"surveyId": "7bf535fd-6c92-4ef1-1234-1685a06f71b8",
+	"surveyVersion": 6803238123,
+	"name": "Sample Survey To Test Data Model",
+	"publishType": "Live",
+	"questions": [{
+			"questionId": "Q1",
+			"text": "What is your name"
+		},
+		{
+			"questionId": "Q2",
+			"text": "How old are you"
+		}
+	]
+}
